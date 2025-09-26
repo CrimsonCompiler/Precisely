@@ -1,0 +1,27 @@
+{
+  "name": "precisely",
+  "version": "1.0.0",
+  "description": "Precisely – A smart food ordering platform that helps users discover, customize, and order their favorite meals quickly and accurately.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowercase-tousif/Precisely.git"
+  },
+  "author": "Tousif Tasrik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lowercase-tousif/Precisely/issues"
+  },
+  "homepage": "https://github.com/lowercase-tousif/Precisely#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
