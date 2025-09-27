@@ -33,13 +33,5 @@
   list-style: none;
   cursor: pointer;
   padding: 12px 18px;
-  border-radius: 5px;
-  font-size: 16px; 
-  transition: all 0.3s ease;
-}
-
-.nav-items ul li:hover {
-  background-color: #f8f8f8;
-  color: #ff6600;
-  font-weight: bold;
+  font-size: 20px; 
 }
