@@ -4,7 +4,6 @@ import ReactDOM from "react-dom/client";
 
 // Header Component
 const Header = () => {
-  console.log(logo);
   return (
     <div className="header">
       <div className="logo-container">
