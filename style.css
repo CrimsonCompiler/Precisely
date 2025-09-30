@@ -90,3 +90,14 @@ body {
   padding: 20px 0;
 }
 
+.filter-btn{
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 14px;
+  background-color: #b53131;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
