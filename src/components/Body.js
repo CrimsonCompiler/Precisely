@@ -26,6 +26,11 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
+        {/* Search Buttons */}
+        <div className="search-container">
+          <input type="text" />
+          <button>Search</button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
