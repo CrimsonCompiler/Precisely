@@ -47,6 +47,14 @@ body {
   background-color: #f5f5f5;
   color: #007bff;
 }
+.nav-items ul button{
+  border: none;
+  padding: 0px 20px 0px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+}
 
 /* Basic body styling */
 .body {
@@ -93,7 +101,59 @@ body {
   line-height: 30px;
 }
 
-.filter-btn{
+/* Filter section */
+.filter {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Search box styling */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+.search-container button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Filter Button */
+.filter-btn {
   padding: 10px;
   margin-bottom: 10px;
   border: none;
@@ -102,9 +162,16 @@ body {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.filter-btn:hover {
+  background-color: #9e2a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
+/* Shimmer Effect */
 .shimmer-container {
   display: flex;
   gap: 10px;
