@@ -18,7 +18,7 @@ const RestaurantCard = (props) => {
       <div className="res-card-content">
         <h3>{name}</h3>
         <p>{cuisines.join(", ")}</p>
-        <p>${costForTwo / 100} for two</p>
+        <p>{costForTwo} </p>
         <p>{deliveryTime} minutes</p>
         <p>{avgRating} rating</p>
       </div>
