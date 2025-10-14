@@ -1,30 +1,42 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredResturants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const DEFAULT_LAT = 23.777176;
+  const DEFAULT_LONG = 90.399452;
+
   useEffect(() => {
-    fetchData();
+    fetchData(DEFAULT_LAT, DEFAULT_LONG);
   }, []);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6417736&lng=77.22228919999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  const fetchData = async (lat, long) => {
+    const response = await fetch(
+      "https://foodpanda-api-restaurants-list.vercel.app/api/restaurants",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          latitude: lat,
+          longitude: long,
+        }),
+      }
     );
+    const data = await response.json();
+    const fetchedRestaurants =
+      data?.data?.rlp?.organic_listing?.views[0]?.items || [];
 
-    const json = await data.json();
+    console.log(fetchedRestaurants);
 
-    setListOfRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-
-    setFilteredRestaurants(
-      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    setListOfRestaurant(fetchedRestaurants);
+    setFilteredRestaurants(fetchedRestaurants);
   };
 
   if (listOfRestaurants.length == 0) {
@@ -46,7 +58,7 @@ const Body = () => {
               console.log(searchText);
 
               const filteredNames = listOfRestaurants.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                res.name.toLowerCase().includes(searchText.toLowerCase())
               );
 
               if (!filteredNames) {
@@ -67,7 +79,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (list) => list.info.avgRating > 4
+              (list) => list.rating > 4
             );
 
             setFilteredRestaurants(filteredList);
@@ -78,7 +90,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredResturants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link key={restaurant.id} to={`/restaurant-details/${restaurant.id}`}>
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
