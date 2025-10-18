@@ -1,0 +1,86 @@
+/* ======= Container Styles ======= */
+.menu-container {
+  padding: 40px;
+  max-width: 1000px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.menu-title {
+  font-size: 2rem;
+  margin: 30px;
+
+  color: #222;
+}
+
+.menu-category {
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.category-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  color: #444;
+}
+
+/* ======= Grid Layout for Cards ======= */
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* ======= Small Horizontal Card ======= */
+
+.product-card-horizontal.small-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 16px;
+  background-color: #fff;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.product-card-horizontal.small-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ======= Product Info ======= */
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.product-description{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #d82947;
+}
+
+/* ======= Product Image ======= */
+.product-image.small-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-left: 16px;
+}
